@@ -1,7 +1,6 @@
 class User < ApplicationRecord
     
     has_many:posts
-    
-    name,presence:true
-    email,presence:true
+    validates :name, presence: true
+    validates :email, presence:true
 end

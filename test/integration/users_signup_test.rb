@@ -5,14 +5,22 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
   test "invalid signup information" do
     get signup_path
     assert_no_difference 'User.count' do
-      post users_path, params: { user: { name:  "",
+      post signup_path, params: { user: { name:  "",
                                          email: "user@invalid",
-                                         password:              "foo",
+                                         password: "foo",
                                          password_confirmation: "bar" } }
     end
     assert_template 'users/new'
-    assert_select 'div#<CSS id for error explanation>'
+    assert_select 'div#error_explanation'
     assert_select 'div.<CSS class for field with error>'
+    assert_select 'div.field_with_errors'
+    assert_select 'ul' do
+    assert_select 'li' , 'Name can\'t be blank'
+    assert_select 'li' , 'Email is invalid'
+    assert_select 'li' , 'Password confirmation doesn\'t match Password'
+    assert_select 'li' , 'Password is too short (minimum is 6 characters)'
+  end
+    assert_select 'form[action="/signup"]'
   end
 
 
@@ -21,7 +29,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     assert_difference 'User.count', 1 do
       post users_path, params: { user: { name:  "Example User",
                                          email: "user@example.com",
-                                         password:              "password",
+                                         password: "password",
                                          password_confirmation: "password" } }
     end
     follow_redirect!

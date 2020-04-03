@@ -5,11 +5,14 @@ class UsersController < ApplicationController
 
 
   def index
-   @users = User.paginate(page: params[:page])
+  # @users = User.paginate(page: params[:page])
+  @users = User.where(activated: true).paginate(page: params[:page])
   end
   
   def show
     @user = User.find(params[:id])
+    redirect_to root_url and return unless @user.activated?
+    # debugger
   end
   
   def new
@@ -17,9 +20,10 @@ class UsersController < ApplicationController
   end
   
   def create
-   @user = User.new(user_params)
+    @user = User.new(user_params)
     if @user.save
-      User.Mailer.account_activation(@user).deliver_now
+      @user.send_activation_email
+      UserMailer.account_activation(@user).deliver_now
       flash[:info] = "メールアドレスを確認してください"
       redirect_to root_url
     else

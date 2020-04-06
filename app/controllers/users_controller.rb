@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     if @user.save
       @user.send_activation_email
       UserMailer.account_activation(@user).deliver_now
-      flash[:info] = "メールアドレスを確認してください"
+      flash[:info] = "メールを確認してください"
       redirect_to root_url
     else
       render 'new'

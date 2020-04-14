@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  
+  has_many :posts, dependent::destroy
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save   :downcase_email
   before_create :create_activation_digest
@@ -37,7 +39,7 @@ class User < ApplicationRecord
   end
   
   def activate
-    update_columns(activated: FILL_IN, activated_at: FILL_IN)
+    update_columns(activated: true, activated_at: Time.zone.now)
   end
 
   def send_activation_email
@@ -46,7 +48,8 @@ class User < ApplicationRecord
   
   def create_reset_digest
     self.reset_token = User.new_token
-    update_columns(reset_digest:  FILL_IN, reset_sent_at: FILL_IN)
+    update_columns(reset_digest: User.digest(reset_token),
+                reset_sent_at: Time.zone.now)
   end
 
   def send_password_reset_email

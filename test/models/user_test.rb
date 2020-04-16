@@ -78,11 +78,11 @@ test "password should be present (nonblank)" do
   end
   
   test "associated posts should be destroyed" do
-    @user.save 
-    @user.posts.create!(content:"Lorem ipsum")
-    assert_difference 'Micropost.count', -1 do
+    @user.save
+    @user.posts.create!(content: "Lorem ipsum")
+    assert_difference 'Post.count', -1 do
       @user.destroy
-    end 
+    end
   end 
   
 end

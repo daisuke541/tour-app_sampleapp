@@ -59,6 +59,10 @@ class User < ApplicationRecord
   def password_reset_expired?
     reset_sent_at < 2.hours.ago
   end
+  
+  def feed
+      Post.where("user_id = ?",id)
+  end 
 
   private
 
@@ -70,4 +74,6 @@ class User < ApplicationRecord
       self.activation_token  = User.new_token
       self.activation_digest = User.digest(activation_token)
     end
+    
+    
 end

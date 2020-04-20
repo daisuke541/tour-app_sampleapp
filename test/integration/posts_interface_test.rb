@@ -18,11 +18,10 @@ class PostsInterfaceTest < ActionDispatch::IntegrationTest
     assert_select 'div#error_explanation'
     # 有効な送信
     content = "This post really ties the room together"
-    picture = fixture_file_upload('test/fixtures/rails.png','image/png')
     assert_difference 'Post.count', 1 do
-      post posts_path, post: { content: content, picture: picture }
+      post posts_path, params: { post: { content: content } }
     end
-    assert @user.posts.first.picture?
+    assert_redirected_to root_url
     follow_redirect!
     assert_match content, response.body
     # 投稿を削除する

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
   root   'static_pages#home'
   
+  post '/guest_log_in', to: 'sessions#new_guest'
 
   get    '/help',    to: 'static_pages#help'
   
@@ -23,7 +24,8 @@ Rails.application.routes.draw do
     end 
   end 
   
-  resources :guest_sessions, only: [:create, :home]
+    
+  
   
   resources :account_activations, only: [:edit]
   

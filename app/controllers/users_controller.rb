@@ -6,12 +6,12 @@ class UsersController < ApplicationController
 
 
   def index
-    @users = User.where(activated: true).paginate(page: params[:page])
+    @users = User.where(activated: true).paginate(page: params[:page]).search(params[:search])
   end
 
   def show
     @user = User.find(params[:id])
-    @posts = @user.posts.paginate(page: params[:page])
+    @posts = @user.posts.paginate(page: params[:page]).search(params[:search])
     redirect_to root_url and return unless @user.activated?
   end
   

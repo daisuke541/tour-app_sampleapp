@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   
+  get 'maps/index'
+
+  get 'favorite_relationships/create'
+
+  get 'favorite_relationships/destroy'
+
   root   'static_pages#home'
   
   post '/guest_log_in', to: 'sessions#new_guest'
@@ -18,9 +24,11 @@ Rails.application.routes.draw do
   
   delete '/logout',  to: 'sessions#destroy'
   
+  get    'maps/index',  to: 'maps#index'
+  
   resources :users do
     member do 
-      get :following, :followers
+      get :following, :followers, :likes
     end 
   end 
   
@@ -34,4 +42,9 @@ Rails.application.routes.draw do
   resources :posts, only: [:create, :destroy]
   
   resources :relationships, only: [:create, :destroy]
+  
+  resources :favorite_relationships, only: [:create, :destroy]
+  
+  resources :maps, only: [:index]
+  
 end

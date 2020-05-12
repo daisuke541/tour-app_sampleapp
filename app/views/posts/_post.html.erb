@@ -12,4 +12,14 @@
                                        data: { confirm: "You sure?" } %>
     <% end %>
   </span>
+  </li>
+  
+<li>
+  <span class="Like" id="Like_form_<%= post.id %>">
+    <% if post.liked_by.include?(current_user) %>
+    <%= render "posts/unlike", post: post %>
+    <% else %>
+    <%= render "posts/like", post: post %>
+    <% end %>
+  </span>    
 </li>

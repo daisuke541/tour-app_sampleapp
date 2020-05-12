@@ -13,6 +13,10 @@ class User < ApplicationRecord
   
   has_many :followers, through: :passive_relationships, source: :follower
   
+  has_many :favorite_relationships, dependent: :destroy
+  
+  has_many :likes, through: :favorite_relationships, source: :post
+  
   
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save   :downcase_email
@@ -107,6 +111,18 @@ class User < ApplicationRecord
     end 
   end 
     
+    def like(post)
+      likes << post
+    end 
+    
+    def unlike(post)
+      favorite_relationships.find_by(post_id: post.id).destroy 
+    end 
+    
+    def likes?(post)
+      likes.include?(post)
+    end 
+      
     
     
   private

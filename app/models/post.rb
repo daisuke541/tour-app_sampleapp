@@ -7,6 +7,9 @@ class Post < ApplicationRecord
     validates :content, presence: true, length: { maximum: 140 }
     validate :picture_size
     
+    has_many :favorite_relationships, dependent: :destroy
+    has_many :liked_by, through: :favorite_relationships, source: :user
+    
     def self.search(search)
       if search
         where(['content LIKE ?', "%#{search}%"])

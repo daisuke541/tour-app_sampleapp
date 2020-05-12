@@ -12,4 +12,12 @@
     </strong>
     followers
   </a>
+  
+  <!-- いいね機能 -->
+  <a href="<%= likes_user_path(@user) %>">
+    <strong id="likes" class="stat">
+      <%= @user.likes.count %>
+    </strong>
+    likes
+  </a>
 </div>

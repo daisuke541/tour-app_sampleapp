@@ -27,8 +27,9 @@
   <% end %>
   
   <ol class="posts">
-    <%= render @posts %>
+  <%= render @posts %>
   </ol>
+  <%= link_to @posts, post_path %>
   <%= will_paginate @posts %>
   <% end %>
   </div>

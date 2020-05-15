@@ -25,3 +25,7 @@
     <%= form.submit %>
   </div>
 <% end %>
+
+<%= form_with(model: @post, local: true) do |form| %>
+  <% =form_text_field :address,placeholder:"住所を入力して下さい" %>
+<% end %>

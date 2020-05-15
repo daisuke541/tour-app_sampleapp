@@ -10,6 +10,10 @@ class Post < ApplicationRecord
     has_many :favorite_relationships, dependent: :destroy
     has_many :liked_by, through: :favorite_relationships, source: :user
     
+    # 地図投稿機能
+    geocoded_by :address
+    after_validation :geocode
+    
     def self.search(search)
       if search
         where(['content LIKE ?', "%#{search}%"])

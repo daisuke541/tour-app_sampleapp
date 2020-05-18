@@ -1,5 +1,5 @@
 class AddTitleToPost < ActiveRecord::Migration[5.1]
   def change
-    add_column :posts, :title, :stringr
+    add_column :posts, :title, :string
   end
 end

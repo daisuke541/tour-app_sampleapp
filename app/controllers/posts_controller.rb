@@ -6,10 +6,13 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @postpage = @post.content
+    @latitude = @post.latitude
+    @longitude = @post.longitude
+    @address = @post.address
   end 
   
   def create 
-    @post = current_user.posts.build(post_params)
+    @post = current_user.posts.build(post_params) if logged_in?
     if @post.save
       flash[:success] = "投稿しました"
       redirect_to root_url
@@ -27,7 +30,7 @@ class PostsController < ApplicationController
   
   private
    def post_params
-     params.require(:post).permit(:content, :picture)
+     params.require(:post).permit(:title, :content, :address, :latitude, :longitude, :picture)
    end 
    
    def correct_user

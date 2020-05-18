@@ -3,10 +3,9 @@
   <div class="field">
     <%= f.text_area :title, placeholder: "タイトルをいれてください" %>
     <%= f.text_area :content, placeholder: "このばしょはどうでしたか？" %>
+    <%= f.text_area :address,placeholder:"じゅうしょをいれてください" %>
     
-  <%= form_with(model: @post, local: true) do |f| %>
-  <%= f.text_area :address,placeholder:"じゅうしょをいれてください" %>
-  <% end %>
+  
 
   </div>
   <%= f.submit "Post", class: "btn btn-primary" %>

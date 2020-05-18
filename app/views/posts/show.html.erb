@@ -19,7 +19,7 @@
 
 
 <p>住所</p>
-<p><%= @lab.address %></p>(住所名表示)
+<p><%= @post.address %></p>(住所名表示)
 
 <div id="map"></div>(地図を表示)
 ・・・
@@ -34,7 +34,7 @@
 <script type="text/javascript">
     function initMap() {
 
-        var test ={lat: <%= @lab.latitude %>, lng: <%= @lab.longitude %>};
+        var test ={lat: <%= @post.latitude %>, lng: <%= @post.longitude %>};
         var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 15,
             center: test
@@ -42,7 +42,7 @@
         var transitLayer = new google.maps.TransitLayer();
         transitLayer.setMap(map);
 
-        var contentString = '住所：<%= @lab.address %>';
+        var contentString = '住所：<%= @post.address %>';
         var infowindow = new google.maps.InfoWindow({
             content: contentString
         });

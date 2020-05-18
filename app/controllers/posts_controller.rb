@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   end 
   
   def create 
-    @post = current_user.posts.build(post_params) if logged_in?
+    @post = current_user.posts.build(post_params)
     if @post.save
       flash[:success] = "投稿しました"
       redirect_to root_url
@@ -30,7 +30,7 @@ class PostsController < ApplicationController
   
   private
    def post_params
-     params.require(:post).permit(:title, :content, :address, :latitude, :longitude, :picture)
+     params.require(:post).permit(:id, :title, :content, :address, :latitude, :longitude, :picture)
    end 
    
    def correct_user

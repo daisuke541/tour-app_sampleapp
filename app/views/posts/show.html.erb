@@ -16,25 +16,13 @@
 </p>
 
 
-
-
 <p>住所</p>
-<p><%= @post.address %></p>(住所名表示)
-
-<div id="map"></div>(地図を表示)
-・・・
-
-<style>(地図の大きさ指定)
-#map{
-  height: 150px;
-  width:270px;
-}
-</style>
+<p><%= @post.address %></p>
 
 <script type="text/javascript">
     function initMap() {
 
-        var test ={lat: <%= @post.latitude %>, lng: <%= @post.longitude %>};
+        var test ={lat: <%= @latitude %>, lng: <%= @longitude %>};
         var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 15,
             center: test
@@ -42,7 +30,7 @@
         var transitLayer = new google.maps.TransitLayer();
         transitLayer.setMap(map);
 
-        var contentString = '住所：<%= @post.address %>';
+        var contentString = '住所：<%= @address %>';
         var infowindow = new google.maps.InfoWindow({
             content: contentString
         });
@@ -58,10 +46,23 @@
         });
     }
 </script>
-
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap">
 </script>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @post.address %>
+</p>
+
+
+
+<div id="map"></div>
+
+
+
                             
 
 

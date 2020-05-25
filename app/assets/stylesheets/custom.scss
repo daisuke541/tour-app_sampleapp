@@ -15,6 +15,14 @@ $gray-medium-light: #eaeaea;
 
 body {
   padding-top: 60px;
+  background-image:url(image.jpeg);
+  background-size:cover;
+  background-position:center top;
+}
+
+.btn {
+  background-color: black;
+  color: white;
 }
 
 section {
@@ -27,6 +35,7 @@ textarea {
 
 .center {
   text-align: center;
+  font-family: 'Sawarabi Mincho';
   h1 {
     margin-bottom: 10px;
   }
@@ -36,6 +45,7 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
+  font-family: 'Sawarabi Mincho';
 }
 
 h1 {
@@ -46,7 +56,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.2em;
+  font-size: 1.6em;
   letter-spacing: -1px;
   margin-bottom: 30px;
   text-align: center;
@@ -56,6 +66,7 @@ h2 {
 
 p {
   font-size: 1.1em;
+  font-family: 'Sawarabi Mincho';
   line-height: 1.7em;
 }
 
@@ -65,11 +76,12 @@ p {
 #logo {
   float: left;
   margin-right: 10px;
-  font-size: 1.7em;
+  font-size: 40px;
+  font-family: 'Sawarabi Mincho';
   color: white;
   text-transform: uppercase;
   letter-spacing: -1px;
-  padding-top: 9px;
+  padding-top: 25px;
   font-weight: bold;
   &:hover {
     color: white;
@@ -77,11 +89,13 @@ p {
   }
 }
 
+
 /* footer */
 
 footer {
   margin-top: 45px;
   padding-top: 5px;
+  font-family: 'Sawarabi Mincho';
   border-top: 1px solid $gray-medium-light;
   color: $gray-light;
   a {
@@ -303,6 +317,6 @@ span.picture {
 }
 
 #map {
-    height: 100px;
-    width: 100px;
+    height: 400px;
+    width: 1000px;
 }

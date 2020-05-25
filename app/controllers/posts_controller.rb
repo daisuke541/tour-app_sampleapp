@@ -5,7 +5,6 @@ class PostsController < ApplicationController
   
   def show
     @post = Post.find(params[:id])
-    @postpage = @post.content
     @latitude = @post.latitude
     @longitude = @post.longitude
     @address = @post.address
@@ -30,7 +29,7 @@ class PostsController < ApplicationController
   
   private
    def post_params
-     params.require(:post).permit(:id, :title, :content, :address, :latitude, :longitude, :picture)
+     params.require(:post).permit(:title, :content, :address, :latitude, :longitude, :picture)
    end 
    
    def correct_user

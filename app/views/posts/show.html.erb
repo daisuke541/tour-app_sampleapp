@@ -19,6 +19,8 @@
 <p>住所</p>
 <p><%= @post.address %></p>
 
+<div id="map"></div>
+
 <script type="text/javascript">
     function initMap() {
 
@@ -50,16 +52,11 @@
         src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap">
 </script>
 
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @post.address %>
-</p>
 
 
 
-<div id="map"></div>
+
+
 
 
 

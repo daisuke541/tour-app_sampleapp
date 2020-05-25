@@ -1,3 +1,7 @@
+<!doctype html>
+<head>
+  <script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
+</head>
 <% if logged_in? %>
   <div class="row">
     <aside class="col-md-4">
@@ -23,7 +27,7 @@
     </div>
   </div>
 <% else %>
-  <div class="btn center-block">
+  <div class="btn center-block bg-slider__title">
     <h1>
       <%= link_to "関東カルト", root_path %>
       </h1>

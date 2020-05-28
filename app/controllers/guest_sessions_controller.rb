@@ -7,8 +7,8 @@ class GuestSessionsController < ApplicationController
        # password_digest: SecureRandom.urlsafe_base64)
         
         #session[:user_id] = user.id
-      #  flash[:success] = 'ゲストユーザーでログインしました'
-       # flash[:warning] = 'よろしくお願いします！'
+      #  flash[:success] = 
+       # flash[:warning] = 
         #redirect_to root_url
 #    end
     

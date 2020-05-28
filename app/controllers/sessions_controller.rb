@@ -3,6 +3,13 @@ class SessionsController < ApplicationController
   def new
   end
 
+  def new_guest
+    user = User.guest
+    log_in user
+    redirect_to root_url
+    flash[:notice] = "ゲストユーザーとしてログインしました。よろしくお願い致します。"
+  end
+  
   def create
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
@@ -27,12 +34,6 @@ class SessionsController < ApplicationController
     redirect_to root_url
   end
   
-  def new_guest
-    user = User.guest
-    log_in user
-    redirect_to root_url
-    flash[:notice] = "ゲストユーザーとしてログインしました。
-    よろしくお願い致します。"
-  end
+  
     
 end

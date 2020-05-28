@@ -13,9 +13,14 @@ $gray-medium-light: #eaeaea;
 
 /* universal */
 
-
 .titlelogo {
-  color: white;
+}
+
+.titlelogogradation {
+  background: -webkit-linear-gradient(0deg, #ACB6E5, #86FDE8);//背景色にグラデーションを指定
+  -webkit-background-clip: text;//テキストでくり抜く
+  -webkit-text-fill-color: transparent;//くり抜いた部分は背景を表示
+  a:visited { color:#ACB6E5; text-decoration:none }
 }
 
 .jumbotron-extend {
@@ -23,22 +28,19 @@ $gray-medium-light: #eaeaea;
   position: relative;
   height: 100vh;
   min-height: 100px;
-  background: url(image.jpeg) no-repeat center center;
+  background-color: black;
   background-size: cover;
+  a:visited { color:white; text-decoration:none }
 }
 
+
 body {
-  padding-top: 20px;
-  background-color: #000;
-  background-repeat: no-repeat;
-  background-size:cover;
-  
 
 }
 
 .btn {
-  color: white;
-  margin-right: 75px;
+  background-color:rgba(0,0,0,0);
+  margin-right: 60px;
   font-weight: bold;
   border-radius: 5px;
   border-radius: 5px;
@@ -66,9 +68,8 @@ textarea {
 /* slidshow */
 
 .box {
-  position   : relative;
-  max-width  : 400px;
-  height     : 250px;
+  max-width  : 100%;
+  height     : 100%;
   margin     : auto;
   overflow   : hidden;
 }
@@ -85,20 +86,31 @@ textarea {
 }
 
 /* --- 段差で背景画像のアニメーションを実行 ----------------- */
-.box .src1 {
-  background: url(image.jpeg);   /* 背景の画像を指定 */
+.box .src1  {
+  background-size: cover;
+  background: url(image.jpeg) no-repeat center center;
 }
-.box .src2 {
-  background: url(rails.png);   /* 背景の画像を指定 */
-  animation-delay  : 5s;
+.box .src2  {
+  background-size: cover;
+  background: url(image2.jpeg) no-repeat center center;
+  animation-delay  : 2s;
+  
 }
-.box .src3 {
-  background: url(image.jpeg);   /* 背景の画像を指定 */
-  animation-delay  : 10s;
+.box .src3  {
+  background-size: cover;
+  background: url(image3.jpeg) no-repeat center center;  
+  animation-delay  : 4s;
 }
-.box .src4 {
-  background: url(rails.png);   /* 背景の画像を指定 */
-  animation-delay  : 15s;
+.box .src4  {
+  background-size: cover;
+  background: url(image4.jpeg) no-repeat center center;   
+  animation-delay  : 6s;
+}
+
+.box .src5  {
+  background-size: cover;
+  background: url(image5.jpeg) no-repeat center center;   
+  animation-delay  : 8s;
 }
 
 @keyframes bgAnime {
@@ -109,17 +121,16 @@ textarea {
  100% { opacity: 0; }
 }
 
-/* --- 前面の文字定義（サンプルのため変更してください） ----- */
+/* --- 前面の文字定義 ----- */
 .box .boxString{
   position   : absolute;
   display    : inline-block;
-  padding    : 0px;
-  background : black;          
-  color      : #fff;
-  top        : 50%;                               /* 中央寄せ */
+  background-color:rgba(0,0,0,0.5);
+  top        : 25%;                              
   left       : 50%;
   transform  : translate(-50%,-50%);
   z-index    : 11;
+  a:visited { color:white; text-decoration:none }
 }
 
 /* typography */
@@ -131,20 +142,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 6em;
   letter-spacing: -2px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   text-align: center;
-  color: white;
+  a:visited { color:white; text-decoration:none }
 }
 
 h2 {
   font-size: 1.6em;
   letter-spacing: -1px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   text-align: center;
   font-weight: normal;
-  color: white;
+  color:white; 
 }
 
 p {
@@ -161,7 +172,7 @@ p {
   margin-right: 20px;
   font-size: 40px;
   font-family: 'Sawarabi Mincho';
-  color: white;
+  a:visited { color:white; text-decoration:none }
   background-color: black;
   text-transform: uppercase;
   letter-spacing: -1px;

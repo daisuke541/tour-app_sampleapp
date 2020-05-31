@@ -1,8 +1,12 @@
 <% if logged_in? %>
+<head>
+<link rel="stylesheet" type="text/css" href="custom.scss">
+</head>
 <header class="navbar navbar-fixed-top navbar-header">
+  
   <div class="container">
-    <%= link_to "関東カルト", root_path, id: "logo" %>
-    <nav>
+    <%= link_to "日本", root_path, class: "logo" %><%= link_to "カルト", root_path, class: "logogradation" %><%= link_to "案内", root_path, class: "logo" %>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark mt-3 mb-3">
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "ホーム", root_path %></li>
         <li><%= link_to "ヘルプ", help_path %></li>
@@ -30,8 +34,8 @@
         <header class="navbar navbar-fixed-top navbar-header">
         <div class="container">
          <ul class="nav navbar-nav navbar-right">
-         <li><%= link_to "ホーム", root_path %></li>
-         <li><%= link_to "ヘルプ", help_path %></li>
+         <li><%= link_to "ホーム", root_path, class: "logo-btn" %></li>
+         <li><%= link_to "ヘルプ", help_path, class: "logo-btn" %></li>
          </ul>
          </div>
           </header>
@@ -40,4 +44,3 @@
       </ul>
     </nav>
   </div>
-</header>

@@ -16,6 +16,38 @@ $gray-medium-light: #eaeaea;
 .titlelogo {
 }
 
+.text-focus-in {
+    -webkit-animation: text-focus-in 2.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+            animation: text-focus-in 2.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+@-webkit-keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}
+@keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+
+
 .titlelogogradation {
   background: -webkit-linear-gradient(0deg, #ACB6E5, #86FDE8);//背景色にグラデーションを指定
   -webkit-background-clip: text;//テキストでくり抜く
@@ -28,7 +60,6 @@ $gray-medium-light: #eaeaea;
   position: relative;
   height: 100vh;
   min-height: 100px;
-  background-color: black;
   background-size: cover;
   a:visited { color:white; text-decoration:none }
 }
@@ -45,8 +76,23 @@ body {
   border-radius: 5px;
   border-radius: 5px;
   border-radius: 5px;
+}
 
-  
+.fluid-box {
+  width: 100vw;
+  height: 100%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: black;
+  padding: 40px;
+}
+
+.fluid-box-inner{
+ margin: 0 auto;
+ height: 100%;
+ padding: 10px;
+ background-color: black;
 }
 
 section {
@@ -89,28 +135,41 @@ textarea {
 .box .src1  {
   background-size: cover;
   background: url(image.jpeg) no-repeat center center;
+  animation-delay  : 2s;
 }
 .box .src2  {
   background-size: cover;
   background: url(image2.jpeg) no-repeat center center;
-  animation-delay  : 2s;
+  animation-delay  : 4s;
   
 }
 .box .src3  {
   background-size: cover;
   background: url(image3.jpeg) no-repeat center center;  
-  animation-delay  : 4s;
+  animation-delay  : 6s;
 }
 .box .src4  {
   background-size: cover;
   background: url(image4.jpeg) no-repeat center center;   
-  animation-delay  : 6s;
+  animation-delay  : 8s;
 }
 
 .box .src5  {
   background-size: cover;
-  background: url(image5.jpeg) no-repeat center center;   
-  animation-delay  : 8s;
+  background: url(image5.jpeg) no-repeat center center;
+  animation-delay  : 10s;
+}
+
+.box .src6  {
+  background-size: cover;
+  background: url(image6.jpeg) no-repeat center center;
+  animation-delay  : 12s;
+}
+
+.box .src7  {
+  background-size: cover;
+  background: url(image7.jpeg) no-repeat center center;
+  animation-delay  : 14s;
 }
 
 @keyframes bgAnime {
@@ -125,7 +184,7 @@ textarea {
 .box .boxString{
   position   : absolute;
   display    : inline-block;
-  background-color:rgba(0,0,0,0.5);
+  background-color:rgba(0,0,0,0.1);
   top        : 25%;                              
   left       : 50%;
   transform  : translate(-50%,-50%);
@@ -167,21 +226,42 @@ p {
 
 /* header */
 
-#logo {
+.logo {
   float: left;
-  margin-right: 20px;
-  font-size: 40px;
+  font-size: 50px;
   font-family: 'Sawarabi Mincho';
   a:visited { color:white; text-decoration:none }
-  background-color: black;
   text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 10px;
+  letter-spacing: 11px;
+  padding-top: 20px;
   font-weight: bold;
   &:hover {
     color: white;
     text-decoration: none;
   }
+}
+
+.logogradation {
+  float: left;
+  font-size: 40px;
+  font-family: 'Sawarabi Mincho';
+  text-transform: uppercase;
+  letter-spacing: 11px;
+  padding-top: 20px;
+  font-weight: bold;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+  background: -webkit-linear-gradient(0deg, #ACB6E5, #86FDE8);//背景色にグラデーションを指定
+  -webkit-background-clip: text;//テキストでくり抜く
+  -webkit-text-fill-color: transparent;//くり抜いた部分は背景を表示
+  a:visited { color:#ACB6E5; text-decoration:none }
+}
+
+.logo-btn {
+  size: 20px;
+  padding-top: 20px;
 }
 
 

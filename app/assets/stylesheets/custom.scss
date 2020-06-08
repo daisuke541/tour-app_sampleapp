@@ -243,20 +243,16 @@ p {
 
 .logogradation {
   float: left;
-  font-size: 40px;
+  font-size: 50px;
   font-family: 'Sawarabi Mincho';
   text-transform: uppercase;
   letter-spacing: 11px;
   padding-top: 20px;
   font-weight: bold;
-  &:hover {
-    color: white;
-    text-decoration: none;
-  }
   background: -webkit-linear-gradient(0deg, #ACB6E5, #86FDE8);//背景色にグラデーションを指定
   -webkit-background-clip: text;//テキストでくり抜く
   -webkit-text-fill-color: transparent;//くり抜いた部分は背景を表示
-  a:visited { color:#ACB6E5; text-decoration:none }
+  
 }
 
 .logo-btn {
@@ -481,6 +477,19 @@ span.picture {
   }
 }
 
+.button {
+  display       : inline-block;
+  border-radius : 5%;          
+  font-size     : 14pt;       
+  text-shadow   :1px 1px 0 #000;
+  text-align    : center;     
+  cursor        : pointer;   
+  padding       : 12px 12px;   
+  background: -webkit-linear-gradient(0deg, #ACB6E5, #86FDE8);    
+  color         : #ffffff;     
+  line-height   : 1em;       
+  transition    : .3s;       
+}
 /* likes */
 
 .glyphicon-heart {

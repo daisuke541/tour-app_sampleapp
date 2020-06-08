@@ -2,12 +2,12 @@
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
     <%= f.text_area :title, placeholder: "タイトルをいれてください" %>
-    <%= f.text_area :content, placeholder: "このばしょはどうでしたか？" %>
-    <%= f.text_area :address, placeholder:"じゅうしょをいれてください" %>
-
+    <%= f.text_area :content, placeholder: "どんな場所ですか？" %>
+    <%= f.text_area :address, placeholder:"住所、場所をいれてください" %>
+    <%= f.submit "投稿する", class: "button" %>
 
   </div>
-  <%= f.submit "投稿する", class: "btn btn-default" %>
+  
 <span class="picture">
     <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
     <%= f.file_field :picture %>

@@ -224,7 +224,7 @@ p {
 
 .logo {
   float: left;
-  padding-bottom: 35px;
+  padding-bottom: 45px;
   font-size: 50px;
   font-family: 'Sawarabi Mincho';
   a:visited { color:white; text-decoration:none }
@@ -240,7 +240,7 @@ p {
 
 .logogradation {
   float: left;
-  padding-bottom: 35px;
+  padding-bottom: 45px;
   font-size: 50px;
   font-family: 'Sawarabi Mincho';
   text-transform: uppercase;
@@ -488,6 +488,22 @@ span.picture {
   line-height   : 1em;       
   transition    : .3s;       
 }
+
+.posttitle {
+  padding: 100px 50px;
+  font-size: 35px;
+}
+
+.postcontent {
+  padding: 30px 50px;
+  font-size: 35px;
+}
+
+.postmap {
+  padding: 50px 50px;
+  font-size: 25px;
+}
+
 /* likes */
 
 .glyphicon-heart {

@@ -491,12 +491,15 @@ span.picture {
 
 .posttitle {
   padding: 100px 50px;
+  font-weight: bold;
   font-size: 35px;
 }
 
 .postcontent {
   padding: 30px 50px;
-  font-size: 35px;
+  font-size: 30px;
+  line-height: 1.5em;
+  background-color:rgba(0,0,0,0.05);
 }
 
 .postmap {
